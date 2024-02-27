@@ -2,32 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-.hero{
+.hero {
   @apply grid;
-  grid-template-columns: .4fr .7fr;
+  grid-template-columns: 0.4fr 0.7fr;
 }
 
-input[type="email"], 
+input[type="email"],
 input[type="password"],
+input[type="tel"],
 input[type="text"] {
-  @apply block w-full my-2 rounded-xl;
+  @apply block w-full mb-2 rounded-xl;
   @apply border p-2 border-gray-300 bg-gray-200;
 }
-
-button{
-   @apply block w-full text-gray-700 font-semibold;
-   @apply border border-gray-300 rounded-xl px-6 py-2
+label {
+  @apply text-gray-500 text-sm font-semibold;
 }
-button[type="submit"], .submit{
-   @apply border-0 bg-primary text-white
+button {
+  @apply block w-full text-gray-700 font-semibold;
+  @apply border border-gray-300 rounded-xl px-6 py-2;
+}
+button[type="submit"],
+.submit {
+  @apply border-0 bg-primary text-white;
 }
 
-input[type="email"]:disabled, 
+input[type="email"]:disabled,
 input[type="password"]:disabled,
+input[type="tel"]:disabled
 input[type="text"]:disabled {
-  @apply bg-gray-300 cursor-not-allowed;
+  @apply bg-gray-100 border-0 cursor-not-allowed text-gray-500;
 }
 
-button[type="submit"]:disabled, .submit:disabled{
-   @apply cursor-not-allowed bg-red-400;
+button[type="submit"]:disabled,
+.submit:disabled {
+  @apply cursor-not-allowed bg-red-400;
 }

@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from 'next/link';
+import { signIn } from "next-auth/react";
 
 const page = () => {
   const [email, setEmail] = useState(" ");
@@ -32,9 +33,7 @@ const page = () => {
   }
   return (
     <section className="mt-8">
-      <h1 className="text-center text-primary text-4xl mb-5">
-        Register
-        </h1>
+      <h1 className="text-center text-primary text-4xl mb-5">Register</h1>
       {userCreated && (
         <div className="my-4 text-center text-sm">
           User created.
@@ -44,7 +43,7 @@ const page = () => {
           </Link>
         </div>
       )}
-       {error && (
+      {error && (
         <div className="my-4 text-center text-sm">
           An error has occurred. <br /> Please try again later
         </div>
@@ -71,7 +70,10 @@ const page = () => {
         <div className="py-4 text-center text-gray-500">
           or login with the provider
         </div>
-        <button className="flex items-center justify-center gap-4">
+        <button
+          onClick={() => signIn("google", { callbackUrl:"/"})}
+          className="flex items-center justify-center gap-4"
+        >
           <Image
             src={"/google-logo.png"}
             width={24}
@@ -80,6 +82,12 @@ const page = () => {
           />
           Login with google
         </button>
+        <div className="text-center my-4 text-gray-500 border-t pt-4">
+          Existing acctount?{" "}
+          <Link className="underline" href={"/login"}>
+            Login here &raquo;
+          </Link>
+        </div>
       </form>
     </section>
   );

@@ -16,11 +16,11 @@ const Hero = () => {
             and yet a delicous joy in life
           </p>
           <div className="flex gap-4 text-sm">
-            <button className="text-white uppercase flex gap-2 bg-primary px-4 py-2 rounded-full">
+            <button className="text-white uppercase flex justify-center gap-2 bg-primary px-4 py-2 rounded-full">
               Order Now
               <FaRegArrowAltCircleRight size={20} />
             </button>
-            <button className=" text-gray-400 font-semibold flex gap-2 px-4 py-2 rounded-full">
+            <button className=" text-gray-400 font-semibold flex gap-2 px-4 py-2 rounded-full border-0 items-center">
               Learn More
               <FaRegArrowAltCircleRight size={20} />
             </button>
